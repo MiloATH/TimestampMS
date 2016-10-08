@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var timezoneDiff = 14400;
+var timezoneDiff = 0;// 14400;
 var months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var port = process.env.PORT || 3500;
 
@@ -40,5 +40,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port, function() {
-    console.log('Timestamp app listening on port 8080');
+    console.log('Timestamp app listening on port '+port);
 });
