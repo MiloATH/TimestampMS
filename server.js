@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var app = express();
-var timezoneDiff = 0;// 14400;
 var months = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var port = process.env.PORT || 3500;
 
@@ -18,7 +17,7 @@ app.get("/:date", function(req, res) {
         json ={unix: null, natural: null};
     }
     else{
-    json = { unix: (date.getTime() / 1000 - timezoneDiff),
+    json = { unix: (date.getTime() / 1000),
         natural: (months[date.getMonth()] + ' ' +
         date.getDate() + ', ' + date.getFullYear()) };
     }
@@ -40,5 +39,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port, function() {
-    console.log('Timestamp app listening on port '+port);
+    console.log('Timestamp ms listening on port '+port);
 });
