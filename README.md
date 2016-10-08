@@ -1,5 +1,4 @@
 <h1>Timestamp microservice API</h1>
-<hr>
 <p>
     Use of microservice:
     <ul>1) Pass a string as a parameter, and microservice will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</ul>
