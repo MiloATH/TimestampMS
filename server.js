@@ -21,7 +21,6 @@ app.get("/:date", function(req, res) {
         natural: (months[date.getMonth()] + ' ' +
         date.getDate() + ', ' + date.getFullYear()) };
     }
-    console.log(json);
     res.json(json);
 });
 
@@ -31,9 +30,6 @@ app.get('/', function(req, res) {
         if (err) {
             console.log(err);
             res.status(err.status).end();
-        }
-        else {
-            console.log('Sent:', file);
         }
     });
 });
